@@ -59,7 +59,7 @@ public class HHarrisville implements InitializingBean {
 
 	public List<HJob> getHJobs() {
 		File[] dirset = getHJobsDir().listFiles(path -> path.isDirectory());
-		return Arrays.asList(dirset).stream().map(dir -> new HJob(dir)).collect(Collectors.toUnmodifiableList());
+		return Arrays.asList(dirset).stream()
+			.map(dir -> new HJob(dir)).collect(Collectors.toList());
 	}
-
 }
